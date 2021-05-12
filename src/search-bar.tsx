@@ -63,9 +63,8 @@ export const SearchBar = () => {
   };
 
   useEffect(() => {
-    //upon readySubmit state change, update query, alert what was searched, and reload for cleanup
+    //upon readySubmit state change, alert what was searched, and reload for cleanup
     if (readySubmit) {
-      setQuery(query);
       alert(`You Search For "${query}"`);
       window.location.reload();
     }
