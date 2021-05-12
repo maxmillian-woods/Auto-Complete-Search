@@ -37,7 +37,7 @@ export const SearchBar = () => {
       //backspace: slice off last character, reset currentFocus
       const updatedQuery = query.slice(0, query.length);
       setQuery(updatedQuery);
-      setCurrentFocus(0);
+      setCurrentFocus(-1);
     } else if (e.keyCode === 13) {
       //enter: if a suggestion is in focus update query and input value and submit. If not, submit query as is
       if (currentFocus >= 0) {
