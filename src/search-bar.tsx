@@ -1,4 +1,4 @@
-import { SyntheticEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { wordList } from "./word-list";
 
 export const SearchBar = () => {
@@ -22,7 +22,7 @@ export const SearchBar = () => {
     return;
   };
 
-  const handleKeyPress = (e: SyntheticEvent) => {
+  const handleKeyPress = (e: any) => {
     const input = e.target as HTMLInputElement;
     console.log(query);
     if (e.keyCode === 40) {
@@ -35,7 +35,7 @@ export const SearchBar = () => {
       setCurrentFocus(currentFocus >= 0 ? currentFocus - 1 : currentFocus);
     } else if (e.keyCode === 8 && query.length > 0) {
       //backspace: slice off last character, reset currentFocus
-      const updatedQuery = query.slice(0, query.length - 1);
+      const updatedQuery = query.slice(0, query.length);
       setQuery(updatedQuery);
       setCurrentFocus(0);
     } else if (e.keyCode === 13) {
